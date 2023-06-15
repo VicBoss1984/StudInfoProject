@@ -2,8 +2,6 @@
 
 UniStudent *alloc_mem(UniStudent *ptr_uni) {
     UniStudent *demo_ptr = NULL;
-    std::cout << "This function is a work-in-progress!\n";
-    
     return demo_ptr;
 }
 
@@ -23,7 +21,5 @@ void prompt_usr() {
 
 string take_usr_input() {
     string usr_input;
-    std::cout << "This function is a work-in-progress!\n";
-
     return usr_input;
 }
