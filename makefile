@@ -1,17 +1,24 @@
 CXX = clang++
 CXXFlags = -std=c++20 -Wall -Wextra
 
-SRC = driver.cpp uni_stud_info_prog.cpp
-OBJ = $(SRC:.cpp=.o)
-EXECUTABLE = StudInfo
+SRC_DIR = src
+INC_DIR = headers
+BIN_DIR = bin
 
-all: $(EXECUTABLE)
+SRC = $(addprefix $(SRC_DIR)/, driver.cpp uni_stud_info_prog.cpp)
+OBJ = $(addprefix $(BIN_DIR)/, $(notdir $(SRC:.cpp=.o)))
+EXECUTABLE = $(BIN_DIR)/StudInfo
+
+all: $(BIN_DIR) $(EXECUTABLE)
+
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
+$(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC_DIR)/uni_stud_info.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(EXECUTABLE): $(OBJ)
 	$(CXX) $(OBJ) -o $@
 
-%.o: %.cpp uni_stud_info.h
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
 clean:
-	rm -f $(OBJ) $(EXECUTABLE)
+	rm -f $(BIN_DIR)/* $(EXECUTABLE)

@@ -1,4 +1,4 @@
-#include "uni_stud_info.h"
+#include "../headers/uni_stud_info.h"
 
 UniStudent *alloc_mem(UniStudent *ptr_uni) {
     UniStudent *demo_ptr = NULL;

@@ -1,4 +1,4 @@
-#include "uni_stud_info.h"
+#include "../headers/uni_stud_info.h"
 
 int main() {
     prompt_usr();
