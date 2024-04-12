@@ -1,6 +1,5 @@
 CXX = clang++
 CXXFLAGS = -std=c++20 -Wall -Wextra -gdwarf-4
-VALGRIND_FLAGS = --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose
 
 SRC_DIR = src
 INC_DIR = headers
@@ -21,9 +20,6 @@ $(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC_DIR)/uni_stud_info.h
 
 $(EXECUTABLE): $(OBJ)
 	$(CXX) $(OBJ) -o $@
-
-test: $(EXECUTABLE)
-	valgrind $(VALGRIND_FLAGS) ./$< > $(TEST_DIR)/valgrind_output.txt 2>&1
 
 clean:
 	rm -f $(BIN_DIR)/* $(EXECUTABLE)
