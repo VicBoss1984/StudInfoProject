@@ -1,11 +1,13 @@
 #include "../headers/uni_stud_info.h"
 
-UniStudent *alloc_mem(UniStudent *ptr_uni) {
+UniStudent *alloc_mem(UniStudent *ptr_uni) 
+{
 	UniStudent *demo_ptr = NULL;
 	return demo_ptr;
 }
 
-void free_mem(UniStudent *ptr_uni) {
+void free_mem(UniStudent *ptr_uni)
+{
 	std::cout << "This function is a work-in-progress!\n";
 }
 
@@ -19,7 +21,8 @@ void prompt_usr()
 		  << "Enter the sex that you were assigned to at birth (0 for male and 1 for female): \n";
 }
 
-string take_usr_input() {
+string take_usr_input()
+{
     string usr_input;
     return usr_input;
 }
